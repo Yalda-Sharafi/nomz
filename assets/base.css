@@ -2962,3 +2962,6 @@ details-disclosure > details {
 .product__info-container h1 {
   margin: 0 0 32px;
 }
+.product__info-container a.product__title {
+  display: none;
+}
