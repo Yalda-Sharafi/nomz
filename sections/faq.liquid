@@ -23,8 +23,16 @@
   }
   .c-faq {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    margin: 0 auto;
   }
+
+  @media screen and (min-width: 1280px) {
+    .c-faq {
+      min-width: 1280px;
+    }
+  }
+  
   .c-faq__col:first-child {
     flex-basis: max-content;
   }
