@@ -223,6 +223,28 @@
         "padding_bottom": 36
       }
     },
+    "9fc1242b-0c74-4596-b9ae-d760e6728af8": {
+      "type": "faq",
+      "blocks": {
+        "template--16803455074590__9fc1242b-0c74-4596-b9ae-d760e6728af8-1668249017ec630829-0": {
+          "type": "list",
+          "settings": {
+            "faq_question": "Question",
+            "faq_answer": "<p> Absolutely! You can use this same method to make coffee with any type of nut butter - hazelnut butter would also be delicious!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--16803455074590__9fc1242b-0c74-4596-b9ae-d760e6728af8-1668249017ec630829-0"
+      ],
+      "settings": {
+        "faq_accardion_title": "faq",
+        "faq_contact_title": "have any questions?",
+        "faq_contact_description": "<p>Ask us anything! We'd love to hear from you! Our office hours are 9AM - 5PM EST, Monday to Friday.<\/p>",
+        "faq_contact_link": "",
+        "faq_contact_mail": ""
+      }
+    },
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
@@ -262,6 +284,7 @@
     "main",
     "multicolumn",
     "image-with-text",
+    "9fc1242b-0c74-4596-b9ae-d760e6728af8",
     "product-recommendations",
     "4a481b6b-72a3-48e0-b4a6-24fd47b8ed1f"
   ]
