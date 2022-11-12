@@ -2971,11 +2971,12 @@ details-disclosure > details {
   display: none;
 }
 .product__info-container .product__title {
-    display: flex;
-    gap: 44px;
+  display: flex;
+  gap: 44px;
 }
 .product__info-container .product__title-badge {
-   white-space: nowrap;
+  white-space: nowrap;
+  margin: 10px 0;
 }
 .product__info-container .product__title-badge span {
   background: #F1BB5A;
