@@ -2987,4 +2987,5 @@ details-disclosure > details {
   background: #F1BB5A;
   border-radius: 8px;
   padding: 8px;
+  display: inline-block;
 }
