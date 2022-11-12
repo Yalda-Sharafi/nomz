@@ -2977,14 +2977,14 @@ details-disclosure > details {
 .product__info-container .product__title-badge {
   white-space: nowrap;
   margin: 10px 0;
-}
-.product__info-container .product__title-badge span {
-  background: #F1BB5A;
-  border-radius: 8px;
-  padding: 8px;
   font-family: 'Gotham Rounded';
   font-weight: 325;
   font-size: 14px;
   line-height: 16px;
   color: #4F4F4F;
+}
+.product__info-container .product__title-badge span {
+  background: #F1BB5A;
+  border-radius: 8px;
+  padding: 8px;
 }
