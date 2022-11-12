@@ -3026,7 +3026,7 @@ fieldset.product-form__input .form__label {
   color: #4F4F4F;
 }
 .product-form__input input[type=radio]+label {
-  padding: 14px 24px !important;
+  padding: 9px 24px !important;
   background: #FFFFFF;
   border: 2px solid #6CACE4 !important;
   border-radius: 8px !important;
