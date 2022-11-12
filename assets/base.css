@@ -2957,3 +2957,8 @@ details-disclosure > details {
     outline: transparent solid 1px;
   }
 }
+
+/* New Style */
+.product__info-container h1 {
+  margin: 0 0 32px;
+}
