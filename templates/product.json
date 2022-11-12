@@ -3,7 +3,7 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "title": {
+        "66c4711b-c384-4150-bee2-1136db2540e9": {
           "type": "title",
           "settings": {
           }
@@ -50,7 +50,7 @@
         }
       },
       "block_order": [
-        "title",
+        "66c4711b-c384-4150-bee2-1136db2540e9",
         "caption",
         "price",
         "537ec9d3-b681-4559-8d34-92510de06fc3",
