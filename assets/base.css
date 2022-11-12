@@ -3037,6 +3037,6 @@ fieldset.product-form__input .form__label {
   color: #4F4F4F !important;
 }
 .product-form__input input[type=radio]:checked+label {
-  background: rgba(108, 172, 228, 0.1);
+  background: rgba(108, 172, 228, 0.1) !important;
 }
 
