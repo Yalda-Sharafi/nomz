@@ -21,17 +21,6 @@
       {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
       {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
       {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
-      
-      @font-face {
-          font-family: "Gotham Rounded";
-          font-weight: 325;
-          src: url({{ "GothamRounded-325.woff2" | asset_url }}) format("woff2");
-      }
-      @font-face {
-          font-family: "Gotham Rounded";
-          font-weight: 400;
-          src: url({{ "GothamRounded-400.woff2" | asset_url }}) format("woff2");
-      }
     </title>
 
     {% if page_description %}
@@ -50,6 +39,17 @@
     %}
 
     {% style %}
+      @font-face {
+          font-family: "Gotham Rounded";
+          font-weight: 325;
+          src: url({{ "GothamRounded-325.woff2" | asset_url }}) format("woff2");
+      }
+      @font-face {
+          font-family: "Gotham Rounded";
+          font-weight: 400;
+          src: url({{ "GothamRounded-400.woff2" | asset_url }}) format("woff2");
+      }
+      
       {{ settings.type_body_font | font_face: font_display: 'swap' }}
       {{ body_font_bold | font_face: font_display: 'swap' }}
       {{ body_font_italic | font_face: font_display: 'swap' }}
