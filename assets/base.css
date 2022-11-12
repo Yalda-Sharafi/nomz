@@ -3045,3 +3045,6 @@ fieldset.product-form__input .form__label {
   border-radius: 8px;
   
 }
+.product-form__buttons .button:after {
+  display: none;
+}
