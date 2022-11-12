@@ -127,8 +127,8 @@
           "type": "column",
           "settings": {
             "image": "shopify:\/\/shop_images\/image_40.png",
-            "title": "Free Shipping",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "title": "well-being",
+            "text": "<p>a delicious snack without refined sugar.<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -137,8 +137,8 @@
           "type": "column",
           "settings": {
             "image": "shopify:\/\/shop_images\/Untitled.jpg",
-            "title": "Hassle-Free Exchanges",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "title": "quality",
+            "text": "<p>nutritionally dense & made with only pure & simple ingredients.<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -147,8 +147,8 @@
           "type": "column",
           "settings": {
             "image": "shopify:\/\/shop_images\/image_40.png",
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "title": "simplicity",
+            "text": "<p>every bite packed with healthy fats & protein for a balanced snack.<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -157,8 +157,8 @@
           "type": "column",
           "settings": {
             "image": "shopify:\/\/shop_images\/image_40.png",
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "title": "community",
+            "text": "<p>leaves you feeling satisfied and refueled.<\/p>",
             "link_label": "",
             "link": ""
           }
