@@ -3005,6 +3005,7 @@ details-disclosure > details {
   font-size: 14px;
   line-height: 16px;
   vertical-align: sub;
+  padding: 0;
 }
 .product .price .badge::before {
   content: '/';
