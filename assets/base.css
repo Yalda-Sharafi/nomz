@@ -3039,7 +3039,7 @@ fieldset.product-form__input .form__label {
 .product-form__input input[type=radio]:checked+label {
   background: rgba(108, 172, 228, 0.1) !important;
 }
-.product-form__buttons {
+.product-form__buttons .button {
   padding: 16px 24px;
   background: #6CACE4;
   border-radius: 8px;
