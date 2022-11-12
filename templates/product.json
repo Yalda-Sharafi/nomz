@@ -20,6 +20,11 @@
           "settings": {
           }
         },
+        "537ec9d3-b681-4559-8d34-92510de06fc3": {
+          "type": "description",
+          "settings": {
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -37,15 +42,22 @@
           "settings": {
             "share_label": "Share"
           }
+        },
+        "996902a1-e29b-4c36-9614-32a3817ed388": {
+          "type": "short_description",
+          "settings": {
+          }
         }
       },
       "block_order": [
         "title",
         "caption",
         "price",
+        "537ec9d3-b681-4559-8d34-92510de06fc3",
         "variant_picker",
         "buy_buttons",
-        "share"
+        "share",
+        "996902a1-e29b-4c36-9614-32a3817ed388"
       ],
       "settings": {
         "enable_sticky_info": true,
