@@ -2989,3 +2989,23 @@ details-disclosure > details {
   padding: 8px;
   display: inline-block;
 }
+.price .price-item {
+  font-family: 'Gotham Rounded';
+  font-weight: 400;
+  font-size: 29px;
+  line-height: 35px;
+  color: #4F4F4F;
+}
+.product .price .badge {
+  background: none;
+  border: none;
+  color: #4F4F4F;
+  font-family: 'Gotham Rounded';
+  font-weight: 325;
+  font-size: 14px;
+  line-height: 16px;
+  vertical-align: sub;
+}
+.product .price .badge::before {
+  contain: '/';
+}
