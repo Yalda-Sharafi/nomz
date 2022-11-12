@@ -14,6 +14,17 @@
   }
 {%- endstyle -%}
 
+{%- style -%}
+  .c-ingredient .title {
+    text-align: center;
+    font-family: 'Gotham Rounded';
+    font-weight: 400;
+    font-size: 29px;
+    line-height: 35px;
+    color: #4F4F4F;
+  }
+{%- endstyle -%}
+
 {%- liquid
   assign columns_mobile_int = section.settings.columns_mobile | plus: 0
   assign show_mobile_slider = false
