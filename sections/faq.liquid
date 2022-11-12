@@ -39,6 +39,16 @@
   .c-faq__col:last-child {
     flex-basis: min-content;
     background: #6CACE4;
+    position: relative;
+  }
+  .c-faq__col:last-child:after {
+    content: '';
+    position: absolute;
+    background: #6CACE4;
+    height: 100%;
+    width: 1000%;
+    left: 100%;
+    top: 0;
   }
   .c-faq__accordion {
     width: auto;
