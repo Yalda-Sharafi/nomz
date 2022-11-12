@@ -3007,5 +3007,5 @@ details-disclosure > details {
   vertical-align: sub;
 }
 .product .price .badge::before {
-  contain: '/';
+  content: '/';
 }
