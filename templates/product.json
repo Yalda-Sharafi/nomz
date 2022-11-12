@@ -223,6 +223,84 @@
         "padding_bottom": 36
       }
     },
+    "9fc1242b-0c74-4596-b9ae-d760e6728af8": {
+      "type": "faq",
+      "blocks": {
+        "template--16803455074590__9fc1242b-0c74-4596-b9ae-d760e6728af8-1668249017ec630829-0": {
+          "type": "list",
+          "settings": {
+            "faq_question": "Question",
+            "faq_answer": "<p> Absolutely! You can use this same method to make coffee with any type of nut butter - hazelnut butter would also be delicious!<\/p>"
+          }
+        },
+        "0333b8ff-3aeb-490f-a246-ab474ae96a51": {
+          "type": "list",
+          "settings": {
+            "faq_question": "Do I need to use a blender?",
+            "faq_answer": "<p> Answer <\/p>"
+          }
+        },
+        "06ac9c6c-abbe-467c-8391-d2b7b82b66e4": {
+          "type": "list",
+          "settings": {
+            "faq_question": "Can I make this macadamia matcha latté iced?",
+            "faq_answer": "<p> Answer <\/p>"
+          }
+        },
+        "e985aeed-3367-424d-a340-ba78713183d1": {
+          "type": "list",
+          "settings": {
+            "faq_question": "Can I make nut milk using nut butter?",
+            "faq_answer": "<p> Answer <\/p>"
+          }
+        },
+        "6513ba9b-f478-42e9-b19d-f8f96344044c": {
+          "type": "list",
+          "settings": {
+            "faq_question": "Can I make a coffee latté with macadamia nut butter?",
+            "faq_answer": "<p> Answer <\/p>"
+          }
+        },
+        "adbdee48-a04f-4030-a776-b3ebe8bb3e54": {
+          "type": "list",
+          "settings": {
+            "faq_question": "Do I need to use a blender?",
+            "faq_answer": "<p> Answer <\/p>"
+          }
+        },
+        "8007297c-22e9-4e95-8364-f0952dac99d5": {
+          "type": "list",
+          "settings": {
+            "faq_question": "Can I make this macadamia matcha latté iced?",
+            "faq_answer": "<p> Answer <\/p>"
+          }
+        },
+        "bcd6bc53-d68e-4e9c-b0c3-e9e48843cb15": {
+          "type": "list",
+          "settings": {
+            "faq_question": "Can I make nut milk using nut butter?",
+            "faq_answer": "<p> Answer <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--16803455074590__9fc1242b-0c74-4596-b9ae-d760e6728af8-1668249017ec630829-0",
+        "0333b8ff-3aeb-490f-a246-ab474ae96a51",
+        "06ac9c6c-abbe-467c-8391-d2b7b82b66e4",
+        "e985aeed-3367-424d-a340-ba78713183d1",
+        "6513ba9b-f478-42e9-b19d-f8f96344044c",
+        "adbdee48-a04f-4030-a776-b3ebe8bb3e54",
+        "8007297c-22e9-4e95-8364-f0952dac99d5",
+        "bcd6bc53-d68e-4e9c-b0c3-e9e48843cb15"
+      ],
+      "settings": {
+        "faq_accardion_title": "faq",
+        "faq_contact_title": "have any questions?",
+        "faq_contact_description": "<p>Ask us anything! We'd love to hear from you! Our office hours are 9AM - 5PM EST, Monday to Friday.<\/p>",
+        "faq_contact_link": "",
+        "faq_contact_mail": "support@nomz.com"
+      }
+    },
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
@@ -262,6 +340,7 @@
     "main",
     "multicolumn",
     "image-with-text",
+    "9fc1242b-0c74-4596-b9ae-d760e6728af8",
     "product-recommendations",
     "4a481b6b-72a3-48e0-b4a6-24fd47b8ed1f"
   ]
