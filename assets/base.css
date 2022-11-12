@@ -2640,7 +2640,6 @@ details[open] > .header__submenu {
 }
 
 .header__menu-item span {
-  color:red;
   transition: text-decoration var(--duration-short) ease;
 }
 

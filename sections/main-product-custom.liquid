@@ -55,7 +55,6 @@
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
 
-  <div class="breadcrumb"> {% include 'breadcrumbs' %} </div>
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
     <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
       {% render 'product-media-gallery', variant_images: variant_images %}
@@ -80,18 +79,12 @@
               </p>
             {%- when 'title' -%}
               <div class="product__title" {{ block.shopify_attributes }}>
-                <div>
-                  <h1>{{ product.title | escape }}</h1>
-                  <a href="{{ product.url }}" class="product__title">
-                    <h2 class="h1">
-                      {{ product.title | escape }}
-                    </h2>
-                  </a>
-                </div>
-                <div class="product__title-badge">
-                  {% if product.metafields.custom.badge_edition %} <span> limited edition</span> {% endif %}
-                  {% include 'discount' %}
-                </div>
+                <h1>{{ product.title | escape }}</h1>
+                <a href="{{ product.url }}" class="product__title">
+                  <h2 class="h1">
+                    {{ product.title | escape }}
+                  </h2>
+                </a>
               </div>
             {%- when 'price' -%}
               <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
@@ -119,136 +112,6 @@
                   {{ form | payment_terms }}
                 {%- endform -%}
               </div>
-            {%- when 'description' -%}
-              {%- if product.description != blank -%}
-                <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
-                  {{ product.description }}
-                </div>
-              {%- endif -%}
-            {%- when 'icon-with-text' -%}
-                {%- liquid
-                  assign heading1Empty = false
-                  assign heading2Empty = false
-                  assign heading3Empty = false
-                  assign textOnlyAllItems = true
-  
-                  if block.settings.heading_1 == empty
-                    assign heading1Empty = true
-                  endif
-  
-                  if block.settings.heading_2 == empty
-                    assign heading2Empty = true
-                  endif
-  
-                  if block.settings.heading_3 == empty
-                    assign heading3Empty = true
-                  endif
-
-                  if block.settings.heading_4 == empty
-                    assign heading4Empty = true
-                  endif
-  
-                  if heading1Empty == false and block.settings.icon_1 != 'none' or block.settings.image_1 != null
-                    assign textOnlyAllItems = false
-                    elsif heading2Empty == false and block.settings.icon_2 != 'none' or block.settings.image_2 != null
-                      assign textOnlyAllItems = false
-                    elsif heading3Empty == false and block.settings.icon_3 != 'none' or block.settings.image_3 != null
-                      assign textOnlyAllItems = false
-                      elsif heading4Empty == false and block.settings.icon_4 != 'none' or block.settings.image_4 != null
-                        assign textOnlyAllItems = false
-                  endif
-                -%}
-                <ul class="icon-with-text icon-with-text--{{ block.settings.layout }} list-unstyled{% if textOnlyAllItems %} icon-with-text--text-only{% endif %}" {{ block.shopify_attributes }}>
-                  {%- unless heading1Empty -%}
-                    <li class="icon-with-text__item">
-                      {%- if block.settings.image_1 == null -%}
-                        {%- render 'icon-accordion', icon: block.settings.icon_1 -%}
-                      {%- else -%}
-                        <img
-                          src="{{ block.settings.image_1 | image_url }}"
-                          {% if block.settings.image_1.alt != blank %}
-                            alt="{{ block.settings.image_1.alt | escape }}"
-                          {% else %}
-                            role="presentation"
-                          {% endif %}
-                          height="auto"
-                          width="auto"
-                          loading="lazy"
-                        >
-                      {%- endif -%}
-                      <span class="h4">
-                        {{- block.settings.heading_1 -}}
-                      </span>
-                    </li>
-                  {%- endunless -%}
-                  {%- unless heading2Empty -%}
-                    <li class="icon-with-text__item">
-                      {%- if block.settings.image_2 == null -%}
-                        {% render 'icon-accordion', icon: block.settings.icon_2 -%}
-                      {%- else -%}
-                        <img
-                          src="{{ block.settings.image_2 | image_url }}"
-                          {% if block.settings.image_2.alt != blank %}
-                            alt="{{ block.settings.image_2.alt | escape }}"
-                          {% else %}
-                            role="presentation"
-                          {% endif %}
-                          height="auto"
-                          width="auto"
-                          loading="lazy"
-                        >
-                      {%- endif -%}
-                      <span class="h4">
-                        {{- block.settings.heading_2 -}}
-                      </span>
-                    </li>
-                  {%- endunless -%}
-                  {%- unless heading3Empty -%}
-                    <li class="icon-with-text__item">
-                      {%- if block.settings.image_3 == null -%}
-                        {% render 'icon-accordion', icon: block.settings.icon_3 -%}
-                      {%- else -%}
-                        <img
-                          src="{{ block.settings.image_3 | image_url }}"
-                          {% if block.settings.image_3.alt != blank %}
-                            alt="{{ block.settings.image_3.alt | escape }}"
-                          {% else %}
-                            role="presentation"
-                          {% endif %}
-                          height="auto"
-                          width="auto"
-                          loading="lazy"
-                        >
-                      {%- endif -%}
-                      <span class="h4">
-                        {{- block.settings.heading_3 -}}
-                      </span>
-                    </li>
-                  {%- endunless -%}
-                  {%- unless heading4Empty -%}
-                    <li class="icon-with-text__item">
-                      {%- if block.settings.image_4 == null -%}
-                        {% render 'icon-accordion', icon: block.settings.icon_3 -%}
-                      {%- else -%}
-                        <img
-                          src="{{ block.settings.image_4 | image_url }}"
-                          {% if block.settings.image_4.alt != blank %}
-                            alt="{{ block.settings.image_4.alt | escape }}"
-                          {% else %}
-                            role="presentation"
-                          {% endif %}
-                          height="auto"
-                          width="auto"
-                          loading="lazy"
-                        >
-                      {%- endif -%}
-                      <span class="h4">
-                        {{- block.settings.heading_4 -}}
-                      </span>
-                    </li>
-                  {%- endunless -%}
-                </ul>
-            
             {%- when 'inventory' -%}
               <p
                 class="product__inventory no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
@@ -296,6 +159,12 @@
                   {%- endif -%}
                 {%- endif -%}
               </p>
+            {%- when 'description' -%}
+              {%- if product.description != blank -%}
+                <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
+                  {{ product.description }}
+                </div>
+              {%- endif -%}
             {%- when 'sku' -%}
               <p
                 class="product__sku no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
@@ -725,7 +594,102 @@
                   <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
                 {%- endif -%}
               </product-recommendations>
-            {%- endcase -%}
+            {%- when 'icon-with-text' -%}
+              {%- liquid
+                assign heading1Empty = false
+                assign heading2Empty = false
+                assign heading3Empty = false
+                assign textOnlyAllItems = true
+
+                if block.settings.heading_1 == empty
+                  assign heading1Empty = true
+                endif
+
+                if block.settings.heading_2 == empty
+                  assign heading2Empty = true
+                endif
+
+                if block.settings.heading_3 == empty
+                  assign heading3Empty = true
+                endif
+
+                if heading1Empty == false and block.settings.icon_1 != 'none' or block.settings.image_1 != null
+                  assign textOnlyAllItems = false
+                  elsif heading2Empty == false and block.settings.icon_2 != 'none' or block.settings.image_2 != null
+                    assign textOnlyAllItems = false
+                  elsif heading3Empty == false and block.settings.icon_3 != 'none' or block.settings.image_3 != null
+                    assign textOnlyAllItems = false
+                endif
+              -%}
+              <ul class="icon-with-text icon-with-text--{{ block.settings.layout }} list-unstyled{% if textOnlyAllItems %} icon-with-text--text-only{% endif %}" {{ block.shopify_attributes }}>
+                {%- unless heading1Empty -%}
+                  <li class="icon-with-text__item">
+                    {%- if block.settings.image_1 == null -%}
+                      {%- render 'icon-accordion', icon: block.settings.icon_1 -%}
+                    {%- else -%}
+                      <img
+                        src="{{ block.settings.image_1 | image_url }}"
+                        {% if block.settings.image_1.alt != blank %}
+                          alt="{{ block.settings.image_1.alt | escape }}"
+                        {% else %}
+                          role="presentation"
+                        {% endif %}
+                        height="auto"
+                        width="auto"
+                        loading="lazy"
+                      >
+                    {%- endif -%}
+                    <span class="h4">
+                      {{- block.settings.heading_1 -}}
+                    </span>
+                  </li>
+                {%- endunless -%}
+                {%- unless heading2Empty -%}
+                  <li class="icon-with-text__item">
+                    {%- if block.settings.image_2 == null -%}
+                      {% render 'icon-accordion', icon: block.settings.icon_2 -%}
+                    {%- else -%}
+                      <img
+                        src="{{ block.settings.image_2 | image_url }}"
+                        {% if block.settings.image_2.alt != blank %}
+                          alt="{{ block.settings.image_2.alt | escape }}"
+                        {% else %}
+                          role="presentation"
+                        {% endif %}
+                        height="auto"
+                        width="auto"
+                        loading="lazy"
+                      >
+                    {%- endif -%}
+                    <span class="h4">
+                      {{- block.settings.heading_2 -}}
+                    </span>
+                  </li>
+                {%- endunless -%}
+                {%- unless heading3Empty -%}
+                  <li class="icon-with-text__item">
+                    {%- if block.settings.image_3 == null -%}
+                      {% render 'icon-accordion', icon: block.settings.icon_3 -%}
+                    {%- else -%}
+                      <img
+                        src="{{ block.settings.image_3 | image_url }}"
+                        {% if block.settings.image_3.alt != blank %}
+                          alt="{{ block.settings.image_3.alt | escape }}"
+                        {% else %}
+                          role="presentation"
+                        {% endif %}
+                        height="auto"
+                        width="auto"
+                        loading="lazy"
+                      >
+                    {%- endif -%}
+                    <span class="h4">
+                      {{- block.settings.heading_3 -}}
+                    </span>
+                  </li>
+                {%- endunless -%}
+              </ul>
+          {%- endcase -%}
         {%- endfor -%}
         <a href="{{ product.url }}" class="link product__view-details animate-arrow">
           {{ 'products.product.view_full_details' | t }}
@@ -911,11 +875,6 @@
     {
       "type": "price",
       "name": "t:sections.main-product.blocks.price.name",
-      "limit": 1
-    },
-    {
-      "type": "short_description",
-      "name": "Short description",
       "limit": 1
     },
     {
@@ -2184,202 +2143,6 @@
         {
           "type": "text",
           "id": "heading_3",
-          "default": "Heading",
-          "label": "t:sections.main-product.blocks.icon_with_text.settings.heading_3.label",
-          "info": "t:sections.main-product.blocks.icon_with_text.settings.heading.info"
-        },
-        {
-          "type": "select",
-          "id": "icon_4",
-          "options": [
-            {
-              "value": "none",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__1.label"
-            },
-            {
-              "value": "apple",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__2.label"
-            },
-            {
-              "value": "banana",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__3.label"
-            },
-            {
-              "value": "bottle",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__4.label"
-            },
-            {
-              "value": "box",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__5.label"
-            },
-            {
-              "value": "carrot",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__6.label"
-            },
-            {
-              "value": "chat_bubble",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__7.label"
-            },
-            {
-              "value": "check_mark",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__8.label"
-            },
-            {
-              "value": "clipboard",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__9.label"
-            },
-            {
-              "value": "dairy",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__10.label"
-            },
-            {
-              "value": "dairy_free",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__11.label"
-            },
-            {
-              "value": "dryer",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__12.label"
-            },
-            {
-              "value": "eye",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__13.label"
-            },
-            {
-              "value": "fire",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__14.label"
-            },
-            {
-              "value": "gluten_free",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__15.label"
-            },
-            {
-              "value": "heart",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__16.label"
-            },
-            {
-              "value": "iron",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__17.label"
-            },
-            {
-              "value": "leaf",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__18.label"
-            },
-            {
-              "value": "leather",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__19.label"
-            },
-            {
-              "value": "lightning_bolt",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__20.label"
-            },
-            {
-              "value": "lipstick",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__21.label"
-            },
-            {
-              "value": "lock",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__22.label"
-            },
-            {
-              "value": "map_pin",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__23.label"
-            },
-            {
-              "value": "nut_free",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__24.label"
-            },
-            {
-              "value": "pants",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__25.label"
-            },
-            {
-              "value": "paw_print",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__26.label"
-            },
-            {
-              "value": "pepper",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__27.label"
-            },
-            {
-              "value": "perfume",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__28.label"
-            },
-            {
-              "value": "plane",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__29.label"
-            },
-            {
-              "value": "plant",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__30.label"
-            },
-            {
-              "value": "price_tag",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__31.label"
-            },
-            {
-              "value": "question_mark",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__32.label"
-            },
-            {
-              "value": "recycle",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__33.label"
-            },
-            {
-              "value": "return",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__34.label"
-            },
-            {
-              "value": "ruler",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__35.label"
-            },
-            {
-              "value": "serving_dish",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__36.label"
-            },
-            {
-              "value": "shirt",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__37.label"
-            },
-            {
-              "value": "shoe",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__38.label"
-            },
-            {
-              "value": "silhouette",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__39.label"
-            },
-            {
-              "value": "snowflake",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__40.label"
-            },
-            {
-              "value": "star",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__41.label"
-            },
-            {
-              "value": "stopwatch",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__42.label"
-            },
-            {
-              "value": "truck",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__43.label"
-            },
-            {
-              "value": "washing",
-              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__44.label"
-            }
-          ],
-          "default": "truck",
-          "label": "t:sections.main-product.blocks.icon_with_text.settings.icon_3.label"
-        },
-        {
-          "type": "image_picker",
-          "id": "image_4",
-          "label": "t:sections.main-product.blocks.icon_with_text.settings.image_3.label"
-        },
-        {
-          "type": "text",
-          "id": "heading_4",
           "default": "Heading",
           "label": "t:sections.main-product.blocks.icon_with_text.settings.heading_3.label",
           "info": "t:sections.main-product.blocks.icon_with_text.settings.heading.info"

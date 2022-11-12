@@ -1,0 +1,113 @@
+{{ 'faq.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="o-section__wrapper">
+  <div class="page-width section-{{ section.id }}-padding isolate">
+    <div class="c-faq">
+      <div class="c-faq__col">
+        <div class="c-faq__accordion-body">
+          <div class="c-faq__accordion">
+            <h2 class="c-faq__accordion-title">{{ section.settings.faq_accardion_title }}</h2>
+            {%- for block in section.block -%}
+              <div class="c-faq__container {% if forloop.first %} is-active {% endif %}">
+                <div class="c-faq__label"> {{ block.settings.faq_question }} </div>
+                <div class="c-faq__content"> {{ block.settings.faq_answer }} </div>
+              </div>
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+      <div class="c-faq__col">
+        <div class="c-faq__contact">
+          <h3 class="c-faq__accordion-title">{{ section.settings.aq_contact_title }}</h3>
+          <div class="c-faq__accordion-description">
+            {{ section.settings.faq_contact_description }}
+          </div>
+          <a href="{{ section.settings.faq_contact_link }}"> Start chat </a>
+          <div class="c-faq__accordion-contact">
+            <p> You can also contact us via phone or email: </p>
+            <a href="mailto:{{ section.settings.faq_contact_mail }}"> {{ section.settings.faq_contact_mail }} </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const accordion = document.getElementsByClassName('c-faq__container');
+
+  for (i=0; i<accordion.length; i++) {
+    accordion[i].addEventListener('click', function () {
+      this.classList.toggle('is-active')
+    })
+  }
+
+</script>
+
+{% schema %}
+{
+  "name":"faq",
+  "settings":[
+    {
+      "type": "text",
+      "id": "faq_accardion_title",
+      "label": "Faq Title",
+      "default": "faq"
+    },
+    {
+      "type": "text",
+      "id": "faq_contact_title",
+      "label": "Faq Contact Title",
+      "default": "have any questions?"
+    },
+    {
+      "type": "richtext",
+      "id": "faq_contact_description",
+      "label": "Faq Contact Description",
+      "default": "<p>Ask us anything! We'd love to hear from you! Our office hours are 9AM - 5PM EST, Monday to Friday.</p>"
+    },
+    {
+      "type": "url",
+      "id": "faq_contact_link",
+      "label": "Faq Contact Link"
+    },
+    {
+      "type": "text",
+      "id": "faq_contact_mail",
+      "label": "E-mail"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "List",
+      "type": "list",
+      "settings": [
+        {
+          "type": "text",
+          "id": "faq_question",
+          "label": "Question"
+        },
+        {
+          "type": "richtext",
+          "id": "faq_answer",
+          "label": "Answer"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
