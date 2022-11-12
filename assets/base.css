@@ -2970,3 +2970,7 @@ details-disclosure > details {
 .product__info-container a.product__title {
   display: none;
 }
+.product__info-container .product__title {
+    display: flex;
+    gap: 44px;
+}
