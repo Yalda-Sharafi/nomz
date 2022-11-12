@@ -36,58 +36,114 @@
       <div class="c-ingredient__details">
         {% if product.metafields.custom.calories %}
           <div class="c-ingredient__detail">
-            <span class="c-ingredient__detail-number"> {{ product.metafields.custom.calories }} </div>
-            <span class="c-ingredient__detail-title"> Calories </div>
+            <span class="c-ingredient__detail-number"> {{ product.metafields.custom.calories }} </span>
+            <span class="c-ingredient__detail-title"> Calories </span>
           </div>
         {% endif %}
         {% if product.metafields.custom.protein %}
           <div class="c-ingredient__detail">
-            <span class="c-ingredient__detail-number"> {{ product.metafields.custom.protein }} </div>
-            <span class="c-ingredient__detail-title"> Protein </div>
+            <span class="c-ingredient__detail-number"> {{ product.metafields.custom.protein }} </span>
+            <span class="c-ingredient__detail-title"> Protein </span>
           </div>
         {% endif %}
         {% if product.metafields.custom.carbohydrate %}
           <div class="c-ingredient__detail">
-            <span class="c-ingredient__detail-number"> {{ product.metafields.custom.carbohydrate }} </div>
-            <span class="c-ingredient__detail-title"> Carbohydrate </div>
+            <span class="c-ingredient__detail-number"> {{ product.metafields.custom.carbohydrate }} </span>
+            <span class="c-ingredient__detail-title"> Carbohydrate </span>
           </div>
           {% endif %}
         {% if product.metafields.custom.cholesterol %}
           <div class="c-ingredient__detail">
-            <span class="c-ingredient__detail-number"> {{ product.metafields.custom.cholesterol }} </div>
-            <span class="c-ingredient__detail-title"> Cholesterol </div>
+            <span class="c-ingredient__detail-number"> {{ product.metafields.custom.cholesterol }} </span>
+            <span class="c-ingredient__detail-title"> Cholesterol </span>
           </div>
         {% endif %}
         {% if product.metafields.custom.sodium %}
           <div class="c-ingredient__detail">
-            <span class="c-ingredient__detail-number"> {{ product.metafields.custom.sodium }} </div>
-            <span class="c-ingredient__detail-title"> Sodium </div>
+            <span class="c-ingredient__detail-number"> {{ product.metafields.custom.sodium }} </span>
+            <span class="c-ingredient__detail-title"> Sodium </span>
           </div>
           {% endif %}
       </div>
       <div class="c-ingredient__nutritions">
-        {% if product.metafields.custom.ingredient_1 or  product.metafields.custom.ingredient_image_1 %}
+        {% if product.metafields.custom.ingredient_1 or product.metafields.custom.ingredient_image_1 %}
           <div class="c-ingredient__nutrition">
-            <span class="c-ingredient__nutrition-image"> {{ product.metafields.custom.ingredient_image_1 }} </div>
-            <span class="c-ingredient__nutrition-title"> {{ product.metafields.custom.ingredient_1 }} </div>
+            <div class="c-ingredient__nutrition-image"> 
+              <img
+                srcset="
+                  {%- if product.metafields.custom.ingredient_image_1.width >= 750 -%}{{ product.metafields.custom.ingredient_image_1 | image_url: width: 750 }} 750w,{%- endif -%}
+                  {%- if product.metafields.custom.ingredient_image_1.width >= 1070 -%}{{ product.metafields.custom.ingredient_image_1 | image_url: width: 1070 }} 1070w,{%- endif -%}
+                  {%- if product.metafields.custom.ingredient_image_1.width >= 1500 -%}{{ product.metafields.custom.ingredient_image_1 | image_url: width: 1500 }} 1500w,{%- endif -%}
+                  {{ product.metafields.custom.ingredient_image_1 | image_url }} {{ product.metafields.custom.ingredient_image_1.width }}w"
+                src="{{ product.metafields.custom.ingredient_image_1 | image_url: width: 1500 }}"
+                sizes="(min-width: 1500px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                alt="{{ product.metafields.custom.ingredient_image_1.alt | escape }}"
+                loading="lazy"
+                width="{{ product.metafields.custom.ingredient_image_1.width }}"
+                height="{{ product.metafields.custom.ingredient_image_1.height }}"
+              >
+            </div>
+            <div class="c-ingredient__nutrition-title"> {{ product.metafields.custom.ingredient_1 }} </div>
           </div>
         {% endif %}
-        {% if product.metafields.custom.ingredient_1 or  product.metafields.custom.ingredient_image_1 %}
+        {% if product.metafields.custom.ingredient_1 or product.metafields.custom.ingredient_image_1 %}
           <div class="c-ingredient__nutrition">
-            <span class="c-ingredient__nutrition-image"> {{ product.metafields.custom.ingredient_image_1 }} </div>
-            <span class="c-ingredient__nutrition-title"> {{ product.metafields.custom.ingredient_1 }} </div>
+            <div class="c-ingredient__nutrition-image"> 
+              <img
+                srcset="
+                  {%- if product.metafields.custom.ingredient_image_1.width >= 750 -%}{{ product.metafields.custom.ingredient_image_1 | image_url: width: 750 }} 750w,{%- endif -%}
+                  {%- if product.metafields.custom.ingredient_image_1.width >= 1070 -%}{{ product.metafields.custom.ingredient_image_1 | image_url: width: 1070 }} 1070w,{%- endif -%}
+                  {%- if product.metafields.custom.ingredient_image_1.width >= 1500 -%}{{ product.metafields.custom.ingredient_image_1 | image_url: width: 1500 }} 1500w,{%- endif -%}
+                  {{ product.metafields.custom.ingredient_image_1 | image_url }} {{ product.metafields.custom.ingredient_image_1.width }}w"
+                src="{{ product.metafields.custom.ingredient_image_1 | image_url: width: 1500 }}"
+                sizes="(min-width: 1500px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                alt="{{ product.metafields.custom.ingredient_image_1.alt | escape }}"
+                loading="lazy"
+                width="{{ product.metafields.custom.ingredient_image_1.width }}"
+                height="{{ product.metafields.custom.ingredient_image_1.height }}"
+              >
+            </div>
+            <div class="c-ingredient__nutrition-title"> {{ product.metafields.custom.ingredient_1 }} </div>
           </div>
         {% endif %}
-        {% if product.metafields.custom.ingredient_1 or  product.metafields.custom.ingredient_image_1 %}
+        {% if product.metafields.custom.ingredient_1 or product.metafields.custom.ingredient_image_1 %}
           <div class="c-ingredient__nutrition">
-            <span class="c-ingredient__nutrition-image"> {{ product.metafields.custom.ingredient_image_1 }} </div>
-            <span class="c-ingredient__nutrition-title"> {{ product.metafields.custom.ingredient_1 }} </div>
+            <div class="c-ingredient__nutrition-image"> 
+              <img
+                srcset="
+                  {%- if product.metafields.custom.ingredient_image_1.width >= 750 -%}{{ product.metafields.custom.ingredient_image_1 | image_url: width: 750 }} 750w,{%- endif -%}
+                  {%- if product.metafields.custom.ingredient_image_1.width >= 1070 -%}{{ product.metafields.custom.ingredient_image_1 | image_url: width: 1070 }} 1070w,{%- endif -%}
+                  {%- if product.metafields.custom.ingredient_image_1.width >= 1500 -%}{{ product.metafields.custom.ingredient_image_1 | image_url: width: 1500 }} 1500w,{%- endif -%}
+                  {{ product.metafields.custom.ingredient_image_1 | image_url }} {{ product.metafields.custom.ingredient_image_1.width }}w"
+                src="{{ product.metafields.custom.ingredient_image_1 | image_url: width: 1500 }}"
+                sizes="(min-width: 1500px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                alt="{{ product.metafields.custom.ingredient_image_1.alt | escape }}"
+                loading="lazy"
+                width="{{ product.metafields.custom.ingredient_image_1.width }}"
+                height="{{ product.metafields.custom.ingredient_image_1.height }}"
+              >
+            </div>
+            <div class="c-ingredient__nutrition-title"> {{ product.metafields.custom.ingredient_1 }} </div>
           </div>
         {% endif %}
-        {% if product.metafields.custom.ingredient_1 or  product.metafields.custom.ingredient_image_1 %}
+        {% if product.metafields.custom.ingredient_1 or product.metafields.custom.ingredient_image_1 %}
           <div class="c-ingredient__nutrition">
-            <span class="c-ingredient__nutrition-image"> {{ product.metafields.custom.ingredient_image_1 }} </div>
-            <span class="c-ingredient__nutrition-title"> {{ product.metafields.custom.ingredient_1 }} </div>
+            <div class="c-ingredient__nutrition-image"> 
+              <img
+                srcset="
+                  {%- if product.metafields.custom.ingredient_image_1.width >= 750 -%}{{ product.metafields.custom.ingredient_image_1 | image_url: width: 750 }} 750w,{%- endif -%}
+                  {%- if product.metafields.custom.ingredient_image_1.width >= 1070 -%}{{ product.metafields.custom.ingredient_image_1 | image_url: width: 1070 }} 1070w,{%- endif -%}
+                  {%- if product.metafields.custom.ingredient_image_1.width >= 1500 -%}{{ product.metafields.custom.ingredient_image_1 | image_url: width: 1500 }} 1500w,{%- endif -%}
+                  {{ product.metafields.custom.ingredient_image_1 | image_url }} {{ product.metafields.custom.ingredient_image_1.width }}w"
+                src="{{ product.metafields.custom.ingredient_image_1 | image_url: width: 1500 }}"
+                sizes="(min-width: 1500px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                alt="{{ product.metafields.custom.ingredient_image_1.alt | escape }}"
+                loading="lazy"
+                width="{{ product.metafields.custom.ingredient_image_1.width }}"
+                height="{{ product.metafields.custom.ingredient_image_1.height }}"
+              >
+            </div>
+            <div class="c-ingredient__nutrition-title"> {{ product.metafields.custom.ingredient_1 }} </div>
           </div>
         {% endif %}
       </div>
@@ -339,8 +395,11 @@
   ],
   "presets": [
     {
-      "name": "t:sections.multicolumn.presets.name",
+      "name": "Ingeredient",
       "blocks": [
+        {
+          "type": "column"
+        },
         {
           "type": "column"
         },

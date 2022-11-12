@@ -21,7 +21,7 @@
         <div class="c-faq__accordion-body">
           <div class="c-faq__accordion">
             <h2 class="c-faq__accordion-title">{{ section.settings.faq_accardion_title }}</h2>
-            {%- for block in section.block -%}
+            {%- for block in section.blocks -%}
               <div class="c-faq__container {% if forloop.first %} is-active {% endif %}">
                 <div class="c-faq__label"> {{ block.settings.faq_question }} </div>
                 <div class="c-faq__content"> {{ block.settings.faq_answer }} </div>
@@ -60,7 +60,9 @@
 
 {% schema %}
 {
-  "name":"faq",
+  "name":"FAQ",
+  "class": "section",
+  "tag": "section",
   "settings":[
     {
       "type": "text",
@@ -99,12 +101,24 @@
         {
           "type": "text",
           "id": "faq_question",
-          "label": "Question"
+          "label": "Question",
+          "default": "Question"
         },
         {
           "type": "richtext",
           "id": "faq_answer",
-          "label": "Answer"
+          "label": "Answer",
+          "default": "<p> Answer </p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ",
+      "blocks": [
+        {
+          "type": "list"
         }
       ]
     }
