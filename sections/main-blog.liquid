@@ -16,6 +16,19 @@
   }
 {%- endstyle -%}
 
+{%- style -%}
+  .blog .title-wrapper-with-link {
+    justify-content: center;
+    margin-bottom: 4em;
+  }
+  .blog__title {
+    font-family: 'Gotham Rounded';
+    font-weight: 400;
+    font-size: 29px;
+    line-height: 35px;
+  }
+{%- endstyle -%}
+
 {%- paginate blog.articles by 6 -%}
   <div class="main-blog page-width section-{{ section.id }}-padding">
     <h1 class="title--primary">{{ blog.title | escape }}</h1>
