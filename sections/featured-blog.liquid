@@ -23,6 +23,19 @@
   }
 {%- endstyle -%}
 
+{%- style -%}
+  .blog .title-wrapper-with-link {
+    justify-content: center;
+    margin-bottom: 4em;
+  }
+  .blog__title {
+    font-family: 'Gotham Rounded';
+    font-weight: 400;
+    font-size: 29px;
+    line-height: 35px;
+  }
+{%- endstyle -%}
+
 {%- liquid
   assign posts_displayed = section.settings.blog.articles_count
   if section.settings.post_limit <= section.settings.blog.articles_count
