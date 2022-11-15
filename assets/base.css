@@ -1,5 +1,16 @@
 /* Color custom properties */
 
+@font-face {
+  font-family: 'Gotham Rounded';
+  font-weight: 325;
+  src: url('GothamRounded-325.woff2') format("woff2");
+}
+@font-face {
+  font-family: 'Gotham Rounded';
+  font-weight: 400;
+  src: url('GothamRounded-Medium.woff2') format("woff2");
+}
+
 :root,
 .color-background-1 {
   --color-foreground: var(--color-base-text);
@@ -2989,6 +3000,10 @@ details-disclosure > details {
   padding: 8px;
   display: inline-block;
 }
+.product__info-container .product__title-badge .badge-discount {
+  background: #79BE70;
+  border-radius: 8px;
+}
 .price .price-item {
   font-family: 'Gotham Rounded';
   font-weight: 400;
@@ -3054,3 +3069,5 @@ fieldset.product-form__input .form__label {
 .product-form__buttons .button:after {
   display: none;
 }
+
+

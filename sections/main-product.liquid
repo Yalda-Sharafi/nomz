@@ -24,6 +24,23 @@
         padding-bottom: {{ section.settings.padding_bottom }}px;
       }
     }
+
+    .c-ingredientdetails__info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      width: 25%;
+    }
+    .c-ingredientdetails__info-image img{
+      max-width: 48px;
+    }
+
+    .c-ingredientdetails{
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 1rem 0px;
+    }
   {%- endstyle -%}
 
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
@@ -90,7 +107,7 @@
                 </div>
                 <div class="product__title-badge">
                   {% if product.metafields.custom.badge_edition %} <span> limited edition</span> {% endif %}
-                  {% include 'discount' %}
+                  <span class="badge-discount"> {% render 'discount'  %} off</span>
                 </div>
               </div>
             {%- when 'price' -%}
@@ -125,6 +142,89 @@
                   {{ product.description }}
                 </div>
               {%- endif -%}
+            {%- when 'ingredientdetails' -%}
+              <div class="c-ingredientdetails">
+                {% if product.metafields.custom.ingeredient_detail_1 or product.metafields.custom.ingeredient_detail_image_1 %}
+                  <div class="c-ingredientdetails__info">
+                    <div class="c-ingredientdetails__info-image"> 
+                      <img
+                        srcset="
+                          {%- if product.metafields.custom.ingeredient_detail_image_1.width >= 750 -%}{{ product.metafields.custom.ingeredient_detail_image_1 | image_url: width: 750 }} 750w,{%- endif -%}
+                          {%- if product.metafields.custom.ingeredient_detail_image_1.width >= 1070 -%}{{ product.metafields.custom.ingeredient_detail_image_1 | image_url: width: 1070 }} 1070w,{%- endif -%}
+                          {%- if product.metafields.custom.ingeredient_detail_image_1.width >= 1500 -%}{{ product.metafields.custom.ingeredient_detail_image_1 | image_url: width: 1500 }} 1500w,{%- endif -%}
+                          {{ product.metafields.custom.ingeredient_detail_image_1 | image_url }} {{ product.metafields.custom.ingeredient_detail_image_1.width }}w"
+                        src="{{ product.metafields.custom.ingeredient_detail_image_1 | image_url: width: 1500 }}"
+                        sizes="(min-width: 1500px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                        alt="{{ product.metafields.custom.ingeredient_detail_image_1.alt | escape }}"
+                        loading="lazy"
+                        width="{{ product.metafields.custom.ingeredient_detail_image_1.width }}"
+                        height="{{ product.metafields.custom.ingeredient_detail_image_1.height }}"
+                      >
+                    </div>
+                    <div class="c-ingredientdetails__info-title"> {{ product.metafields.custom.ingeredient_detail_1 }} </div>
+                  </div>
+                {% endif %}
+                {% if product.metafields.custom.ingeredient_detail_2 or product.metafields.custom.ingeredient_detail_image_2 %}
+                  <div class="c-ingredientdetails__info">
+                    <div class="c-ingredientdetails__info-image"> 
+                      <img
+                        srcset="
+                          {%- if product.metafields.custom.ingeredient_detail_image_2.width >= 750 -%}{{ product.metafields.custom.ingeredient_detail_image_2 | image_url: width: 750 }} 750w,{%- endif -%}
+                          {%- if product.metafields.custom.ingeredient_detail_image_2.width >= 1070 -%}{{ product.metafields.custom.ingeredient_detail_image_2 | image_url: width: 1070 }} 1070w,{%- endif -%}
+                          {%- if product.metafields.custom.ingeredient_detail_image_2.width >= 1500 -%}{{ product.metafields.custom.ingeredient_detail_image_2 | image_url: width: 1500 }} 1500w,{%- endif -%}
+                          {{ product.metafields.custom.ingeredient_detail_image_2 | image_url }} {{ product.metafields.custom.ingeredient_detail_image_2.width }}w"
+                        src="{{ product.metafields.custom.ingeredient_detail_image_2 | image_url: width: 1500 }}"
+                        sizes="(min-width: 1500px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                        alt="{{ product.metafields.custom.ingeredient_detail_image_2.alt | escape }}"
+                        loading="lazy"
+                        width="{{ product.metafields.custom.ingeredient_detail_image_2.width }}"
+                        height="{{ product.metafields.custom.ingeredient_detail_image_2.height }}"
+                      >
+                    </div>
+                    <div class="c-ingredientdetails__info-title"> {{ product.metafields.custom.ingeredient_detail_2 }} </div>
+                  </div>
+                {% endif %}
+                {% if product.metafields.custom.ingeredient_detail_3 or product.metafields.custom.ingeredient_detail_image_3 %}
+                  <div class="c-ingredientdetails__info">
+                    <div class="c-ingredientdetails__info-image"> 
+                      <img
+                        srcset="
+                          {%- if product.metafields.custom.ingeredient_detail_image_3.width >= 750 -%}{{ product.metafields.custom.ingeredient_detail_image_3 | image_url: width: 750 }} 750w,{%- endif -%}
+                          {%- if product.metafields.custom.ingeredient_detail_image_3.width >= 1070 -%}{{ product.metafields.custom.ingeredient_detail_image_3 | image_url: width: 1070 }} 1070w,{%- endif -%}
+                          {%- if product.metafields.custom.ingeredient_detail_image_3.width >= 1500 -%}{{ product.metafields.custom.ingeredient_detail_image_3 | image_url: width: 1500 }} 1500w,{%- endif -%}
+                          {{ product.metafields.custom.ingeredient_detail_image_3 | image_url }} {{ product.metafields.custom.ingeredient_detail_image_3.width }}w"
+                        src="{{ product.metafields.custom.ingeredient_detail_image_3 | image_url: width: 1500 }}"
+                        sizes="(min-width: 1500px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                        alt="{{ product.metafields.custom.ingeredient_detail_image_3.alt | escape }}"
+                        loading="lazy"
+                        width="{{ product.metafields.custom.ingeredient_detail_image_3.width }}"
+                        height="{{ product.metafields.custom.ingeredient_detail_image_3.height }}"
+                      >
+                    </div>
+                    <div class="c-ingredientdetails__info-title"> {{ product.metafields.custom.ingeredient_detail_3 }} </div>
+                  </div>
+                {% endif %}
+                {% if product.metafields.custom.ingeredient_detail_4 or product.metafields.custom.ingeredient_detail_image_4 %}
+                  <div class="c-ingredientdetails__info">
+                    <div class="c-ingredientdetails__info-image"> 
+                      <img
+                        srcset="
+                          {%- if product.metafields.custom.ingeredient_detail_image_4.width >= 750 -%}{{ product.metafields.custom.ingeredient_detail_image_4 | image_url: width: 750 }} 750w,{%- endif -%}
+                          {%- if product.metafields.custom.ingeredient_detail_image_4.width >= 1070 -%}{{ product.metafields.custom.ingeredient_detail_image_4 | image_url: width: 1070 }} 1070w,{%- endif -%}
+                          {%- if product.metafields.custom.ingeredient_detail_image_4.width >= 1500 -%}{{ product.metafields.custom.ingeredient_detail_image_4 | image_url: width: 1500 }} 1500w,{%- endif -%}
+                          {{ product.metafields.custom.ingeredient_detail_image_4 | image_url }} {{ product.metafields.custom.ingeredient_detail_image_4.width }}w"
+                        src="{{ product.metafields.custom.ingeredient_detail_image_4 | image_url: width: 1500 }}"
+                        sizes="(min-width: 1500px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+                        alt="{{ product.metafields.custom.ingeredient_detail_image_4.alt | escape }}"
+                        loading="lazy"
+                        width="{{ product.metafields.custom.ingeredient_detail_image_4.width }}"
+                        height="{{ product.metafields.custom.ingeredient_detail_image_4.height }}"
+                      >
+                    </div>
+                    <div class="c-ingredientdetails__info-title"> {{ product.metafields.custom.ingeredient_detail_4 }} </div>
+                  </div>
+                {% endif %}
+              </div>
             {%- when 'icon-with-text' -%}
                 {%- liquid
                   assign heading1Empty = false
@@ -1033,6 +1133,11 @@
     {
       "type": "description",
       "name": "t:sections.main-product.blocks.description.name",
+      "limit": 1
+    },
+    {
+      "type": "ingredientdetails",
+      "name": "Ingredient Details",
       "limit": 1
     },
     {
