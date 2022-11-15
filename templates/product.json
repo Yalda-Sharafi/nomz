@@ -25,6 +25,11 @@
           "settings": {
           }
         },
+        "6047d81c-92c8-454e-b2f0-51e25249867e": {
+          "type": "ingredientdetails",
+          "settings": {
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -54,6 +59,7 @@
         "caption",
         "price",
         "537ec9d3-b681-4559-8d34-92510de06fc3",
+        "6047d81c-92c8-454e-b2f0-51e25249867e",
         "variant_picker",
         "buy_buttons",
         "share",
