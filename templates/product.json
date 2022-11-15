@@ -88,7 +88,7 @@
         "column-1": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Untitled.jpg",
+            "image": "shopify:\/\/shop_images\/image_41.png",
             "title": "quality",
             "text": "<p>nutritionally dense & made with only pure & simple ingredients.<\/p>",
             "link_label": "",
@@ -98,7 +98,7 @@
         "49953303-a080-47b8-b387-13bb52fe96a1": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/image_40.png",
+            "image": "shopify:\/\/shop_images\/image_42.png",
             "title": "simplicity",
             "text": "<p>every bite packed with healthy fats & protein for a balanced snack.<\/p>",
             "link_label": "",
@@ -108,7 +108,7 @@
         "956a1935-1cf4-4ed6-8fa3-d2dbc0d70200": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/image_40.png",
+            "image": "shopify:\/\/shop_images\/image_43.png",
             "title": "community",
             "text": "<p>leaves you feeling satisfied and refueled.<\/p>",
             "link_label": "",
