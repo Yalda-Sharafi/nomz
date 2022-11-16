@@ -107,7 +107,7 @@
                 </div>
                 <div class="product__title-badge">
                   {% if product.metafields.custom.badge_edition %} <span> limited edition</span> {% endif %}
-                  <span class="badge-discount"> {% render 'discount'  %} off</span>
+                  <span class="badge-discount"> {% render 'discount' %} off</span>
                 </div>
               </div>
             {%- when 'price' -%}
@@ -161,7 +161,9 @@
                         height="{{ product.metafields.custom.ingeredient_detail_image_1.height }}"
                       >
                     </div>
-                    <div class="c-ingredientdetails__info-title"> {{ product.metafields.custom.ingeredient_detail_1 }} </div>
+                    {% if product.metafields.custom.ingeredient_detail_1 %}
+                      <div class="c-ingredientdetails__info-title"> {{ product.metafields.custom.ingeredient_detail_1 }} </div>
+                    {% endif %}
                   </div>
                 {% endif %}
                 {% if product.metafields.custom.ingeredient_detail_2 or product.metafields.custom.ingeredient_detail_image_2 %}
@@ -181,8 +183,10 @@
                         height="{{ product.metafields.custom.ingeredient_detail_image_2.height }}"
                       >
                     </div>
-                    <div class="c-ingredientdetails__info-title"> {{ product.metafields.custom.ingeredient_detail_2 }} </div>
-                  </div>
+                    {% if product.metafields.custom.ingeredient_detail_2 %}
+                      <div class="c-ingredientdetails__info-title"> {{ product.metafields.custom.ingeredient_detail_2 }} </div>
+                    {% endif %}
+                    </div>
                 {% endif %}
                 {% if product.metafields.custom.ingeredient_detail_3 or product.metafields.custom.ingeredient_detail_image_3 %}
                   <div class="c-ingredientdetails__info">
@@ -201,7 +205,9 @@
                         height="{{ product.metafields.custom.ingeredient_detail_image_3.height }}"
                       >
                     </div>
-                    <div class="c-ingredientdetails__info-title"> {{ product.metafields.custom.ingeredient_detail_3 }} </div>
+                    {% if product.metafields.custom.ingeredient_detail_3 %}
+                      <div class="c-ingredientdetails__info-title"> {{ product.metafields.custom.ingeredient_detail_3 }} </div>
+                    {% endif %}
                   </div>
                 {% endif %}
                 {% if product.metafields.custom.ingeredient_detail_4 or product.metafields.custom.ingeredient_detail_image_4 %}
@@ -221,7 +227,9 @@
                         height="{{ product.metafields.custom.ingeredient_detail_image_4.height }}"
                       >
                     </div>
-                    <div class="c-ingredientdetails__info-title"> {{ product.metafields.custom.ingeredient_detail_4 }} </div>
+                    {% if product.metafields.custom.ingeredient_detail_4 %}
+                      <div class="c-ingredientdetails__info-title"> {{ product.metafields.custom.ingeredient_detail_4 }} </div>
+                    {% endif %}
                   </div>
                 {% endif %}
               </div>
